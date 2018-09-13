@@ -56,6 +56,20 @@ executable simple-app-exe
                      , eta-spark-core
   default-language:    Haskell2010
 
+executable spark-pi-exe
+  main-is:             SparkPi.hs
+  hs-source-dirs:      examples
+  build-depends:       base >=4.8 && <4.9
+                     , eta-spark-core
+  default-language:    Haskell2010
+
+executable word-count-exe
+  main-is:             WordCount.hs
+  hs-source-dirs:      examples
+  build-depends:       base >=4.8 && <4.9
+                     , eta-spark-core
+  default-language:    Haskell2010
+
 source-repository this
   type:                git
   location:            https://github.com/Jyothsnasrinivas/eta-spark-core
