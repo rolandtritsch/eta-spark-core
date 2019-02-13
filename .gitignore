@@ -2,3 +2,4 @@ dist
 *.jar
 *.hi
 .idea
+.vscode
