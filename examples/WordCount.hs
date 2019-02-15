@@ -1,17 +1,16 @@
 {-# LANGUAGE RankNTypes, ScopedTypeVariables, TypeOperators, FlexibleContexts #-}
 
 import Java
-import Spark.Core as S
+import qualified Spark.Core as S
 
 main :: IO ()
 main = java $ do
-  conf <- newSparkConf
-  conf <.> setAppName "WordCount Application"
-  sc <- newSparkContext conf
-  lines <- sc <.> textFile inputFile >- cache
-  io $ putStrLn $ show lines 
+  conf <- S.newSparkConf
+  conf <.> S.setAppName "WordCount Application"
+  sc <- S.newSparkContext conf
+  lines <- sc <.> S.textFile inputFile >- S.cache
   io $ putStrLn $ "Hello WordCount"
-  sc <.> stop
+  sc <.> S.stop
   where
     inputFile = "README.md"
 
