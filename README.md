@@ -53,21 +53,10 @@ object SimpleApp {
 ## Installing
 
 0. Install [etlas](https://eta-lang.org/docs/user-guides/eta-user-guide/installation/etlas).
-
-0. Clone this repository.
-
-`git clone https://github.com/Jyothsnasrinivas/eta-spark-core`
-
-0. Go to the newly-cloned directory.
-
-`cd eta-spark-core`
-
-0. Build it.
-
-`etlas build eta-spark-core`
-`etlas build simple-app-exe --enable-uberjar-mode`
-
+0. Clone this repository (`git clone https://github.com/Jyothsnasrinivas/eta-spark-core`).
+0. Go to the newly-cloned directory (`cd eta-spark-core`)
+0. Build it (`etlas build eta-spark-core` and `etlas build simple-app-exe --enable-uberjar-mode`)
 0. Run it.
+  0. `./bin/spark-submit --class eta.main --master local dist/<path-to-simple-app-exe>/simple-app-exe.jar`
 
-`./bin/spark-submit --class eta.main --master local dist/<path-to-simple-app-exe>/simple-app-exe.jar`
 More examples can be found in examples directory.
