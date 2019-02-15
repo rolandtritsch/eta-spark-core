@@ -8,8 +8,12 @@ main = java $ do
   conf <- newSparkConf
   conf <.> setAppName "WordCount Application"
   sc <- newSparkContext conf
+  lines <- sc <.> textFile inputFile >- cache
+  io $ putStrLn $ show lines 
   io $ putStrLn $ "Hello WordCount"
   sc <.> stop
+  where
+    inputFile = "README.md"
 
 {--
 package org.apache.spark.examples;
