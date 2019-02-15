@@ -1,5 +1,1 @@
-dist
-*.jar
-*.hi
-.idea
-.vscode
+dist/
