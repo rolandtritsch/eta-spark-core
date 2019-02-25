@@ -9,6 +9,8 @@ main = java $ do
   conf <.> S.setAppName "WordCount Application"
   sc <- S.newSparkContext conf
   lines <- sc <.> S.textFile inputFile >- S.cache
+  let lines' = map fromJString lines
+  io $ putStrLn $ show lines'
   io $ putStrLn $ "Hello WordCount"
   sc <.> S.stop
   where
